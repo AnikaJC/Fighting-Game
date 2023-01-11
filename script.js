@@ -8,7 +8,8 @@ let p2HealthDiv = document.getElementById('p2Health')
 
 
 const updateGame = (p1,p2,gameState) => {
-  
+  p1NameDiv.innerText = p1.name
+  p2NameDiv.innerText = p2.name
 }
 
 
@@ -64,12 +65,14 @@ class Game {
 }
 
 let player1 = new Player('Anika',100,10)
-console.log(player1.name)
 let player2 = new Player('Abir',100,10)
-let p1;
-let p2;
 
+let p1 = player1;
+let p2 = player2;
 
+let game = new Game()
+//console.log(game)
+updateGame(p1,p2,game.isOver)
 let gameState;
 
 
