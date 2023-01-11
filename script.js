@@ -10,6 +10,14 @@ let p2HealthDiv = document.getElementById('p2Health')
 const updateGame = (p1,p2,gameState) => {
   p1NameDiv.innerText = p1.name
   p2NameDiv.innerText = p2.name
+  p1HealthDiv.innerText = p1.health
+  p2HealthDiv.innerText = p2.health
+  if(p1.health <= 0 ||p2.health <= 0){
+    game.isOver = true 
+    gameState = game.isOver
+    resultDiv.innerText = game.declareWinner(isOver,p1, p2)
+    return gameState
+  }
 }
 
 
