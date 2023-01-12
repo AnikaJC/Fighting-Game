@@ -24,6 +24,9 @@ For playing this game:
 To run this project, you will need to install `vs_code` or you can create an account 
 on `replit.co` which will automatically create an environment you need
 
+### Screenshots
+![fighting-game](https://user-images.githubusercontent.com/68474664/212049020-b30982d8-8303-44d3-a9d0-896f630b891c.png)
+
 
 ## 🔗 Links
 
