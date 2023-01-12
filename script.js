@@ -30,7 +30,7 @@ class Player {
   
   strike (player, enemy, attackDmg) {
     
-    let damageAmount = Math.ceil(Math.random() * 10)
+    let damageAmount = Math.ceil(Math.random() * attackDmg)
     enemy.health -= damageAmount
     updateGame(player, enemy, game.isOver)
     return `${player.name} attacks ${enemy.name} for ${damageAmount} damage!!`
@@ -38,9 +38,10 @@ class Player {
   }
  
   heal (player) {
-    
-    
-
+    let hpAmount = Math.ceil(Math.random() * 5)
+    player.health += hpAmount
+    updateGame(p1, p2, game.isOver)
+    return  `${player.name} heals for ${hpAmount} HP!`
   }
 }
 
@@ -111,4 +112,5 @@ document.addEventListener('keydown', function(e) {
 
 
 
-console.log(p1.strike(p1,p2,10))
+//console.log(p1.strike(p1,p2,10))
+//console.log(p1.heal(p1))
