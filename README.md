@@ -4,7 +4,7 @@
 This is a portfolio project build with HTML5, CSS and Javascript. In this fighting game two player can fight each other by pressing button 'q' and 'p'.
 Besides, both of the player's can heal by pressing 'a' and 'l'. The player whom will strike '0' fast will lose the game!!!
 
-As, it is an interactive game, player sounds been added!!!! 
+As, it is an interactive game, player sounds been added!!!! This project is inspired by rafeh qazi!!!
 
 
 ## BUTTONS:
