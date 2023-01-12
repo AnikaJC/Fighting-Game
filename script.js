@@ -15,7 +15,7 @@ const updateGame = (p1,p2,gameState) => {
   if(p1.health <= 0 ||p2.health <= 0){
     game.isOver = true 
     gameState = game.isOver
-    resultDiv.innerText = game.declareWinner(isOver,p1, p2)
+    resultDiv.innerText = game.declareWinner(game.isOver,p1, p2)
     return gameState
   }
 }
@@ -32,7 +32,7 @@ class Player {
     
     let damageAmount = Math.ceil(Math.random() * attackDmg)
     enemy.health -= damageAmount
-    updateGame(player, enemy, game.isOver)
+    updateGame(p1, p2, game.isOver)
     return `${player.name} attacks ${enemy.name} for ${damageAmount} damage!!`
     
   }
@@ -53,8 +53,16 @@ class Game {
 
   
   declareWinner(isOver,p1, p2) {
+    let message;
+    if(isOver == true && p1.health <= 0){
+      message = `${p2.name} Wins!!`
+    }
+    else if (isOver == true && p2.health <= 0){
+      message = `${p1.name} Wins!!`
+    }
+    document.getElementById('victory').play()
     
-   
+    return message
 
   }
 
@@ -90,24 +98,35 @@ let gameState;
 
 
 document.addEventListener('keydown', function(e) {
- 
+  if(e.key == 'q' && p2.health > 0 && game.isOver == false ){
+    p1.strike(p1,p2,p1.attackDmg)
+    document.getElementById('p1attack').play()
+  }
 
 });
 
 document.addEventListener('keydown', function(e) {
-  
+  if(e.key == 'a' && p2.health > 0 && game.isOver == false){
+    p1.heal(p1)
+    document.getElementById('p1heal').play()
+  }
   
 });
 
 
 document.addEventListener('keydown', function(e) {
-  
+  if(e.key == 'p' && p1.health > 0 && game.isOver == false ){
+    p2.strike(p2,p1,p2.attackDmg)
+    document.getElementById('p2attack').play()
+  }
  
-
 });
 
 document.addEventListener('keydown', function(e) {
- 
+ if(e.key == 'l' && p1.health > 0 && game.isOver == false){
+    p2.heal(p2)
+    document.getElementById('p2heal').play()
+  }
 });
 
 
